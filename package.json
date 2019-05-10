@@ -1,6 +1,6 @@
 {
   "name": "@mrnkr/simple-queue",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Minimal queue implementation",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,6 +16,7 @@
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
+    "tslint": "^5.16.0",
     "tslint-config-airbnb": "^5.11.1",
     "typescript": "^3.4.5"
   },
