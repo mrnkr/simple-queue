@@ -1,8 +1,15 @@
-import { Queue } from './typings';
+export interface Queue<T> {
+
+  enqueue(val: T): void;
+  next(): T | undefined;
+
+  length: number;
+
+}
 
 export class QueueImpl<T> implements Queue<T> {
 
-  public readonly length: number;
+  public length: number;
   private queue: T[];
 
   constructor() {
@@ -11,10 +18,12 @@ export class QueueImpl<T> implements Queue<T> {
   }
 
   public enqueue(val: T): void {
-    this.queue = [ val, ...this.queue ];
+    this.length = this.length + 1;
+    this.queue = [val, ...this.queue];
   }
 
   public next(): T | undefined {
+    this.length = this.length - 1;
     return this.queue.pop();
   }
 

@@ -39,6 +39,14 @@ describe('queue tests', () => {
     expect(queue.next()).toBe(7);
   });
 
+  it('should keep track of the number of elements in the queue', () => {
+    queue.enqueue(2);
+    queue.enqueue(3);
+    queue.enqueue(4);
+
+    expect(queue.length).toBe(3);
+  });
+
   it('should return undefined when there is no next element', () => {
     expect(queue.next()).toBeUndefined();
   });
