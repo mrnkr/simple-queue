@@ -47,8 +47,14 @@ describe('queue tests', () => {
     expect(queue.length).toBe(3);
   });
 
+  it('should not have negative length', () => {
+    queue.next();
+
+    expect(queue.length).toBe(0);
+  });
+
   it('should return undefined when there is no next element', () => {
     expect(queue.next()).toBeUndefined();
   });
 
-})
+});
