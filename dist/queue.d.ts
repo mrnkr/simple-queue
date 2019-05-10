@@ -4,10 +4,10 @@ export interface Queue<T> {
     length: number;
 }
 export declare class QueueImpl<T> implements Queue<T> {
-    length: number;
     private queue;
     constructor();
     enqueue(val: T): void;
     next(): T | undefined;
+    readonly length: number;
 }
 //# sourceMappingURL=queue.d.ts.map

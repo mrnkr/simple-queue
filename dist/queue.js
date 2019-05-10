@@ -22,17 +22,21 @@ var __spread = (this && this.__spread) || function () {
 Object.defineProperty(exports, "__esModule", { value: true });
 var QueueImpl = (function () {
     function QueueImpl() {
-        this.length = 0;
         this.queue = [];
     }
     QueueImpl.prototype.enqueue = function (val) {
-        this.length = this.length + 1;
         this.queue = __spread([val], this.queue);
     };
     QueueImpl.prototype.next = function () {
-        this.length = this.length - 1;
         return this.queue.pop();
     };
+    Object.defineProperty(QueueImpl.prototype, "length", {
+        get: function () {
+            return this.queue.length;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return QueueImpl;
 }());
 exports.QueueImpl = QueueImpl;
