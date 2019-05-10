@@ -1,13 +1,14 @@
 {
-  "name": "simple-queue",
-  "version": "1.0.0",
+  "name": "@mrnkr/simple-queue",
+  "version": "1.0.3",
   "description": "Minimal queue implementation",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "MrNKR",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "ts-node src/index.ts",
+    "build": "rm -rf dist && tsc",
     "test": "jest"
   },
   "devDependencies": {
